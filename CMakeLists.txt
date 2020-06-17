@@ -1,7 +1,3 @@
-#if (POLICY CMP0025)
-#  cmake_policy(SET CMP0025 NEW)
-#endif ()
-
 cmake_policy(SET CMP0048 NEW)  # project_VERSION* variables populated from project(... VERSION x.x.x) string
 
 project(miniforte
@@ -9,7 +5,6 @@ project(miniforte
         LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
-set(TargetOpenMP_FIND_COMPONENTS "CXX")
 
 cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
@@ -17,7 +12,7 @@ list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 include(psi4OptionsTools)
 
 find_package(pybind11 2.5.0 REQUIRED)
-find_package(psi4 1.4 REQUIRED)
+find_package(psi4 1.3 REQUIRED)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-c++1z-extensions") # avoid warnings for C++17
 
