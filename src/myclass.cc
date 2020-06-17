@@ -1,9 +1,4 @@
-#include "psi4/liboptions/liboptions.h"
-#include "psi4/libpsi4util/PsiOutStream.h"
-
 #include "myclass.h"
-
-using namespace pybind11::literals;
 
 using namespace psi;
 

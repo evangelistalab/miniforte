@@ -1,7 +1,5 @@
 #include <pybind11/pybind11.h>
 
-#include "psi4/liboptions/liboptions.h"
-
 #include "myclass.h"
 
 namespace miniforte {
@@ -16,7 +14,5 @@ PYBIND11_MODULE(miniforte, m) {
   py::class_<MyClass, std::shared_ptr<MyClass>>(m, "MyClass")
       .def(py::init<>())
       .def("use_psi4_options", &MyClass::use_psi4_options);
-
-//  py::class_<psi::Options>(m, "psi4.core.Options");
 }
 } // namespace miniforte
