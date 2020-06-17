@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import psi4
 import miniforte
+import psi4
 
 print(f"Welcome to miniforte!")
 print(miniforte.add(3,4))
