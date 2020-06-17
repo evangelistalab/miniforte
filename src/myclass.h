@@ -1,13 +1,12 @@
 #include "psi4/liboptions/liboptions.h"
-#include <pybind11/pybind11.h>
-
-namespace py = pybind11;
 
 namespace miniforte {
 
 class MyClass {
 public:
-  void use_psi4_options(psi::Options &options);
+  void use_psi4_options(psi::Options &options) {
+    options.add_bool("WORKS", true);
+  }
 };
 
 } // namespace miniforte

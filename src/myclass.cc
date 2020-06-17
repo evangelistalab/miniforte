@@ -1,11 +1,11 @@
-#include "myclass.h"
+//#include "myclass.h"
 
-using namespace psi;
+//using namespace psi;
 
-namespace miniforte {
+//namespace miniforte {
 
-void MyClass::use_psi4_options(psi::Options &options) {
-  options.add_bool("WORKS", true);
-}
+//void MyClass::use_psi4_options(psi::Options &options) {
+//  options.add_bool("WORKS", true);
+//}
 
-} // namespace miniforte
+//} // namespace miniforte
