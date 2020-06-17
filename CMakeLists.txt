@@ -4,7 +4,7 @@ project(miniforte
         VERSION 0.1
         LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 14)
 
 cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
@@ -14,12 +14,9 @@ include(psi4OptionsTools)
 find_package(pybind11 2.5.0 REQUIRED)
 find_package(psi4 1.3 REQUIRED)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-c++1z-extensions") # avoid warnings for C++17
-
 pybind11_add_module(miniforte
 src/miniforte.cc
 )
 
 target_link_libraries(miniforte PRIVATE psi4::core)
 target_include_directories(miniforte PRIVATE src)
-#set_target_properties(miniforte PROPERTIES PREFIX "")
