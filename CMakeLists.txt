@@ -25,6 +25,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-c++1z-extensions") # avoid warnings
 # List of CC files
 pybind11_add_module(miniforte
 src/miniforte.cc
+src/myclass.cc
 )
 
 target_link_libraries(miniforte PRIVATE psi4::core)
