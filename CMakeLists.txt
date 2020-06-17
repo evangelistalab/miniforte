@@ -18,5 +18,5 @@ pybind11_add_module(miniforte
 src/miniforte.cc
 )
 
-target_link_libraries(miniforte PRIVATE psi4::core)
+#target_link_libraries(miniforte PRIVATE psi4::core)
 target_include_directories(miniforte PRIVATE src)
