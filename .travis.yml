@@ -15,8 +15,8 @@ install:
   - conda update -q conda
   - conda create -q -n tenv python=$PYTHON_VER gcc_linux-64 gxx_linux-64 gfortran_linux-64 cmake mkl-devel hdf5 psi4 psi4-dev ci-psi4 boost pybind11-headers -c psi4/label/dev
   - source activate tenv
-  - conda install pytest pytest-cov codecov lcov -c conda-forge
-  - pip install pytest-shutil
+#  - conda install pytest pytest-cov codecov lcov -c conda-forge
+#  - pip install pytest-shutil
   
 before_script:
   - python -V
