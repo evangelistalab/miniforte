@@ -7,6 +7,7 @@ matrix:
       - MAX_DET_ORB=64
 
 install:
+  - echo ${TRAVIS_BUILD_DIR}
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
@@ -20,6 +21,7 @@ before_script:
   - python -V
   - cat ${HOME}/miniconda/envs/tenv/share/cmake/psi4/psi4PluginCache.cmake
   - cd ${TRAVIS_BUILD_DIR}
+  - ls
   - >
       cmake -H. -B.
       -C${HOME}/miniconda/envs/tenv/share/cmake/psi4/psi4PluginCache.cmake
