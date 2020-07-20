@@ -12,14 +12,13 @@ install:
   - export PATH="$HOME/miniconda/bin:$PATH"
   - hash -r
   - conda config --set always_yes yes --set changeps1 no
-#  - conda update -q conda
-  - conda create -q -n tenv python=$PYTHON_VER gcc_linux-64 gxx_linux-64 gfortran_linux-64 cmake mkl-devel psi4 psi4-dev ci-psi4 pybind11-headers -c psi4/label/dev pybind11
+  #- conda create -q -n tenv python=$PYTHON_VER gcc_linux-64 gxx_linux-64 gfortran_linux-64 cmake mkl-devel psi4 psi4-dev ci-psi4 pybind11-headers -c psi4/label/dev pybind11
+  - conda create -q -n tenv python=$PYTHON_VER cmake mkl-devel psi4 psi4-dev ci-psi4 pybind11-headers -c psi4/label/dev pybind11
   - source activate tenv
   
 before_script:
   - python -V
-#  - psi4 --version
-#  - psi4 --plugin-compile
+  - cat ${HOME}/miniconda/envs/tenv/share/cmake/psi4/psi4PluginCache.cmake
   - cd ${TRAVIS_BUILD_DIR}
   - >
       cmake -H. -B.
